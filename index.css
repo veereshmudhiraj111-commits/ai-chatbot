@@ -1,0 +1,53 @@
+.container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    font-family:"Roboto";
+}
+
+.button{
+    padding:10px;
+    cursor:pointer;
+    outline:none;
+    
+
+}
+
+.chat-box{
+    display:inline-block;
+    height:100vh;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    font-size:20px;
+    
+
+}
+
+.heading{
+    font-size:50px;
+    font-family: "Bee serif";
+    margin-bottom:50px;
+   
+}
+
+.user-text{
+    width:600px;
+    padding:10px;
+   
+}
+
+.user {
+  text-align: right;
+  color: black;
+  font-size:20px;
+}
+
+.bot {
+  text-align: left;
+  color: black;
+  font-size:20px;
+  
+}
