@@ -24,9 +24,10 @@ async function sendMessage() {
     chatbox.scrollTop = chatbox.scrollHeight;
 
     try {
-        // 5. Send API request (dynamically resolve host based on current environment)
+        // 5. Send API request (dynamically resolve host and path based on environment)
         const host = window.location.protocol === "file:" ? "http://localhost:5000" : "";
-        const response = await fetch(`${host}/chat`, {
+        const apiPath = window.location.protocol === "file:" ? "/chat" : "/api/chat";
+        const response = await fetch(`${host}${apiPath}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
