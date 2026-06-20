@@ -11,6 +11,10 @@ app.use(express.static(__dirname));
 const API_KEY = process.env.API_KEY;
 
 
+app.get('/', (req, res)=>{
+    res.sendFile(__dirname + '/index.html');
+});
+
 app.post('/chat', async (req, res)=>{
     const userMessage = req.body.message
 
