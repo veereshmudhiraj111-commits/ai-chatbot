@@ -6,8 +6,10 @@ const axios = require('axios');
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static(__dirname));
 
 const API_KEY = process.env.API_KEY;
+
 
 app.post('/chat', async (req, res)=>{
     const userMessage = req.body.message
@@ -44,8 +46,12 @@ res.json({reply})
 }
 })
 
-app.listen(5000, ()=>{
-    console.log("Server running on http://localhost:5000");
-})
+if (require.main === module) {
+    app.listen(5000, () => {
+        console.log("Server running on http://localhost:5000");
+    });
+}
+
+module.exports = app;
 
 
